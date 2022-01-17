@@ -28,7 +28,7 @@ model = LinearSVC(C=10)
 model.fit(X_train_feature, y_train)
 y_pre = model.predict(X_test_feature)
 print(accuracy_score(y_test, y_pre))
-image = cv2.imread("image/digit20.jpg")
+image = cv2.imread("image/digit100.jpg")
 
 im_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 im_blur = cv2.GaussianBlur(im_gray, (5, 5), 0)
@@ -52,6 +52,6 @@ for i in contours:
     cv2.putText(image, str(int(nbr[0])), (x, y),
                 cv2.FONT_HERSHEY_DUPLEX, 2, (0, 255, 255), 3)
     # cv2.imshow("image", image)
-cv2.imwrite("./result/result20.jpg", image)
+cv2.imwrite("./result/result100.jpg", image)
 cv2.waitKey()
 cv2.destroyAllWindows()
